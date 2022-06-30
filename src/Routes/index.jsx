@@ -1,11 +1,11 @@
 import React, { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Catalogo from '../Pages/Catalogo';
+import Index from '../Pages';
 
 function Rotas() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Catalogo />} />
+        <Route path="/" element={<Index />} />
       </Routes>
     </BrowserRouter>
   );

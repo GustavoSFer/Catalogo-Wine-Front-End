@@ -5,10 +5,11 @@ import fetchApiWine from '../Services/requatsApi';
 
 function ProvideCatalogo({ children }) {
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
 
-  const fetchDb = async (number) => {
-    const data = await fetchApiWine(number);
-    setProducts(data);
+  const fetchDb = async () => {
+    const data = await fetchApiWine(page);
+    setProducts(data.items);
   };
 
   useEffect(() => {
@@ -16,7 +17,7 @@ function ProvideCatalogo({ children }) {
   }, []);
 
   const context = React.useMemo(() => ({
-    products,
+    products, setPage,
   }), [products]);
 
   return (
