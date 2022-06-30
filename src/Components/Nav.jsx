@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
+import Cart from './Cart';
+import Search from './Search';
 
 function Nav() {
   return (
@@ -18,7 +20,8 @@ function Nav() {
         <Link to="/eventos">Eventos</Link>
       </div>
       <div>
-        opçoes
+        <Search />
+        <Cart />
       </div>
     </div>
   );
