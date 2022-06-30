@@ -1,11 +1,12 @@
 import React from 'react';
 import Nav from '../Components/Nav';
+import ProvideCatalogo from '../Context/ProvideCatalogo';
 
 function Catalogo() {
   return (
-    <div>
+    <ProvideCatalogo>
       <Nav />
-    </div>
+    </ProvideCatalogo>
   );
 }
 
