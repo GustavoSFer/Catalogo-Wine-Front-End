@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
-import Cart from './Cart';
 import Search from './Search';
 
 function Nav() {
@@ -21,7 +20,7 @@ function Nav() {
       </div>
       <div>
         <Search />
-        <Cart />
+        <Link to="/pedidos">Carrinho</Link>
       </div>
     </div>
   );

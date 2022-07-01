@@ -37,9 +37,10 @@ function CardProduct({ item, addProductToCart }) {
   );
 }
 
+CardProduct.defaultProps = { addProductToCart: () => {} };
 CardProduct.propTypes = {
   item: PropTypes.objectOf.isRequired,
-  addProductToCart: PropTypes.func.isRequired,
+  addProductToCart: PropTypes.func,
 };
 
 export default CardProduct;

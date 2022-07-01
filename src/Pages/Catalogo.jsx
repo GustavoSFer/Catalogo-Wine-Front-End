@@ -7,6 +7,8 @@ function Catalogo() {
   const { products } = useContext(ContextWine);
 
   const addProductToCart = (product) => {
+    setCart(JSON.parse(localStorage.getItem('cart')));
+    console.log(cart);
     const newCart = cart.filter(({ id }) => id !== product.id);
     setCart([...newCart, product]);
     localStorage.setItem('cart', JSON.stringify([...newCart, product]));
@@ -20,7 +22,6 @@ function Catalogo() {
             key={item.id}
             item={item}
             addProductToCart={addProductToCart}
-
           />
         ))
           : <h1>Sem produtos</h1>
