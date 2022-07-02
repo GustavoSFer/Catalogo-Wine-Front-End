@@ -9,7 +9,7 @@ function Catalogo() {
 
   const addProductToCart = (product) => {
     setCart(JSON.parse(localStorage.getItem('cart')));
-    console.log(cart);
+
     const newCart = cart.filter(({ id }) => id !== product.id);
     setCart([...newCart, product]);
     localStorage.setItem('cart', JSON.stringify([...newCart, product]));
@@ -19,7 +19,7 @@ function Catalogo() {
     <div>
       <FiltragemPreco />
       {
-        products ? products.map((item) => (
+        products.length !== 0 ? products.map((item) => (
           <CardProduct
             key={item.id}
             item={item}
