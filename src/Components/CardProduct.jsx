@@ -7,7 +7,7 @@ function CardProduct({ item, addProductToCart }) {
   return (
     <div>
 
-      <Link to={item.id}>
+      <Link to={`detalhes/${item.id}`}>
         <img src={item.image} alt={item.name} />
         <h3>{item.name}</h3>
         <div>

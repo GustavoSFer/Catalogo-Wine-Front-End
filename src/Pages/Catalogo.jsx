@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import CardProduct from '../Components/CardProduct';
+import FiltragemPreco from '../Components/FiltragemPreco';
 import ContextWine from '../Context/ContextWine';
 
 function Catalogo() {
@@ -16,6 +17,7 @@ function Catalogo() {
 
   return (
     <div>
+      <FiltragemPreco />
       {
         products ? products.map((item) => (
           <CardProduct

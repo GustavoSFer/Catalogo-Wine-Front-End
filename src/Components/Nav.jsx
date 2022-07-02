@@ -5,24 +5,26 @@ import Search from './Search';
 
 function Nav() {
   return (
-    <div>
-      <div>
-        <Link to="/">
-          <img src={logo} alt="Logo da empresa Wine o maior clube de vinhos do mundo" />
-        </Link>
-      </div>
-      <div>
-        <Link to="/clube">Clube</Link>
-        <Link to="/loja">Loja</Link>
-        <Link to="/produtores">Produtores</Link>
-        <Link to="/ofertas">Ofertas</Link>
-        <Link to="/eventos">Eventos</Link>
-      </div>
-      <div>
-        <Search />
-        <Link to="/pedidos">Carrinho</Link>
-      </div>
-    </div>
+    <header>
+      <nav>
+        <div>
+          <Link to="/">
+            <img src={logo} alt="Logo da empresa Wine o maior clube de vinhos do mundo" />
+          </Link>
+        </div>
+        <div>
+          <Link to="/clube">Clube</Link>
+          <Link to="/loja">Loja</Link>
+          <Link to="/produtores">Produtores</Link>
+          <Link to="/ofertas">Ofertas</Link>
+          <Link to="/eventos">Eventos</Link>
+        </div>
+        <div>
+          <Search />
+          <Link to="/pedidos">Carrinho</Link>
+        </div>
+      </nav>
+    </header>
   );
 }
 
