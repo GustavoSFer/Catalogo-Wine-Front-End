@@ -4,4 +4,10 @@ const fetchApiWine = async (number) => {
   return data;
 };
 
+export const fetchApi = async () => {
+  const response = await fetch('https://wine-back-test.herokuapp.com/products');
+  const data = await response.json();
+  return data.items;
+};
+
 export default fetchApiWine;
