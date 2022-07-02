@@ -23,7 +23,7 @@ function Search() {
   return (
     <div>
       <button type="button" onClick={handleClick}>
-        parte de busca
+        Busca por nome
       </button>
       { buscar ? (
         <div>

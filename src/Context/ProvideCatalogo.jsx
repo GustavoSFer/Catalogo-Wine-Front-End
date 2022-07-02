@@ -28,6 +28,7 @@ function ProvideCatalogo({ children }) {
   };
 
   const filterByName = async (name) => {
+    console.log('hfudshfusdhuf');
     const product = await fetchApi();
     if (name) {
       const filtro = [...product].filter((item) => (
