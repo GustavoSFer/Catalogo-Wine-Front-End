@@ -10,7 +10,9 @@ function ProvideCatalogo({ children }) {
 
   const fetchDb = async () => {
     const data = await fetchApiWine(page);
-    setProducts(data.items);
+    if (data) {
+      setProducts(data.items);
+    }
   };
 
   const filtragemPreco = async (type) => {
@@ -41,10 +43,12 @@ function ProvideCatalogo({ children }) {
 
   useEffect(() => {
     filtragemPreco(filtroPreco);
-  }, [filtroPreco]);
+    fetchDb(page);
+  }, [filtroPreco, page]);
 
   const context = React.useMemo(() => ({
     products,
+    page,
     setPage,
     filtroPreco,
     setFiltroPreco,
