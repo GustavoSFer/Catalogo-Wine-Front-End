@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import ContextWine from '../Context/ContextWine';
 
-function FiltragemPreco() {
+function FilterByPrice() {
   const { setFiltroPreco } = useContext(ContextWine);
   const handleChange = ({ target }) => {
     setFiltroPreco(target.value);
@@ -22,9 +22,8 @@ function FiltragemPreco() {
       R$ 200 Até R$ 500
       <input type="radio" value="500-10000" name="filtro" />
       Acime de R$ 500
-
     </fieldset>
   );
 }
 
-export default FiltragemPreco;
+export default FilterByPrice;

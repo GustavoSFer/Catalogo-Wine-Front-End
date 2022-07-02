@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CardProduct from '../Components/CardProduct';
 import FiltragemPreco from '../Components/FiltragemPreco';
 import ContextWine from '../Context/ContextWine';
@@ -9,7 +9,8 @@ function Catalogo() {
   const { products, page, setPage } = useContext(ContextWine);
 
   const addProductToCart = (product) => {
-    setCart(JSON.parse(localStorage.getItem('cart')));
+    // setCart(JSON.parse(localStorage.getItem('cart')));
+    // console.log(JSON.parse(localStorage.getItem('cart')));
 
     const newCart = cart.filter(({ id }) => id !== product.id);
     setCart([...newCart, product]);
@@ -24,8 +25,13 @@ function Catalogo() {
     setPage(Number(page) + 1);
   };
 
+  useEffect(() => {
+    const storage = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(storage);
+  }, []);
+
   return (
-    <div>
+    <main>
       <div>
         <FiltragemPreco />
         {
@@ -48,7 +54,7 @@ function Catalogo() {
           Póxima Pagina
         </ButtonOnClick>
       </div>
-    </div>
+    </main>
   );
 }
 

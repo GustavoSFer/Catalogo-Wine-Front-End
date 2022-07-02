@@ -2,7 +2,7 @@ import React from 'react';
 import Cart from '../Components/Cart';
 import Nav from '../Components/Nav';
 
-function Pedidos() {
+function CheckoutRequest() {
   return (
     <div>
       <Nav />
@@ -11,4 +11,4 @@ function Pedidos() {
   );
 }
 
-export default Pedidos;
+export default CheckoutRequest;

@@ -4,10 +4,10 @@ import CardPedidos from './CarPedidos';
 
 function Cart() {
   const [removeProduct, setRemoveProduct] = useState(false);
-  const pedidos = JSON.parse(localStorage.getItem('cart'));
+  const carLocalStorage = JSON.parse(localStorage.getItem('cart'));
 
   const removerItem = (product) => {
-    const remove = pedidos.filter(({ id }) => id !== product);
+    const remove = carLocalStorage.filter(({ id }) => id !== product);
     localStorage.setItem('cart', JSON.stringify([...remove]));
     setRemoveProduct(!removeProduct);
   };
@@ -17,7 +17,7 @@ function Cart() {
   return (
     <div>
       <div>
-        { pedidos ? pedidos.map((pedido) => (
+        { carLocalStorage ? carLocalStorage.map((pedido) => (
           <div key={pedido.id}>
             <CardPedidos item={pedido} />
             <ButtonOnClick

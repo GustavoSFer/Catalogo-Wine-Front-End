@@ -7,6 +7,7 @@ function ButtonOnClick({ children, disabled, onClick }) {
       type="submit"
       disabled={disabled}
       onClick={onClick}
+      className="btn btn-success"
     >
       {children}
     </button>

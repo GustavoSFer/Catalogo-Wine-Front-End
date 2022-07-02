@@ -5,8 +5,7 @@ import ButtonOnClick from './ButtonOnClick';
 
 function CardProduct({ item, addProductToCart }) {
   return (
-    <div>
-
+    <div className="container rounded-3 border border-success m-2">
       <Link to={`detalhes/${item.id}`}>
         <img src={item.image} alt={item.name} />
         <h3>{item.name}</h3>
