@@ -13,6 +13,7 @@ function ButtonOnClick({ children, disabled, onClick }) {
   );
 }
 
+// ButtonOnClick.defaultProps = { disabled: 'false' };
 ButtonOnClick.propTypes = {
   children: PropTypes.node.isRequired,
   disabled: PropTypes.bool.isRequired,
