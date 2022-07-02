@@ -3,7 +3,6 @@ import CardPedidos from './CarPedidos';
 
 function Cart() {
   const pedidos = JSON.parse(localStorage.getItem('cart'));
-  console.log(pedidos);
   return (
     <div>
       Carrinho
