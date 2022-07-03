@@ -1,4 +1,6 @@
 # Wine
+  * Gostaria de acessar a aplicação?
+    Link: https://wine-vinhos-front.herokuapp.com/
 
 ### Bem vindo a aplicação e-commerce da Wine
 
@@ -35,3 +37,10 @@
     * `npm install`
   * Inicialize o projeto:
     * `npm start` (uma nova página deve abrir no seu navegador)
+
+## Utilizando o projeto com o Docker
+
+1. Crie a imagem no docker
+  * docker build -t <'NomeDaImagem'> .
+2. Crie o container no docker
+  * docker container run -p 3000:3000 <'NomeDaImagem'>
