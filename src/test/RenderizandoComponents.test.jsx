@@ -50,3 +50,23 @@ describe('Verificando se os elementos aparece na tela', () => {
     expect(image).toHaveAttribute('src', logoEmpresa);
   });
 });
+describe('Verificando Filtro por valor', () => {
+  it('Verificando se o filtro por valor esta na tela', () => {
+    render(
+      <ProvideCatalogo>
+        <App />
+      </ProvideCatalogo>,
+    );
+    const filtro = screen.getByText(/opção de filtro por preço/i);
+    expect(filtro).toBeInTheDocument();
+  });
+  it('Verificando se tem os inputs de filtro por valor', () => {
+    render(
+      <ProvideCatalogo>
+        <App />
+      </ProvideCatalogo>,
+    );
+    const ateQuarenta = screen.getByLabelText('Até R$ 40');
+    expect(ateQuarenta).toBeInTheDocument();
+  });
+});
