@@ -34,6 +34,7 @@ function CardProduct({ item, addProductToCart }) {
         <ButtonOnClick
           disabled={false}
           onClick={() => addProductToCart(item)}
+          data-testid="btn-addCar"
         >
           ADICIONAR
         </ButtonOnClick>
@@ -44,7 +45,7 @@ function CardProduct({ item, addProductToCart }) {
 
 CardProduct.defaultProps = { addProductToCart: () => {} };
 CardProduct.propTypes = {
-  item: PropTypes.objectOf.isRequired,
+  item: PropTypes.objectOf(PropTypes.objectOf).isRequired,
   addProductToCart: PropTypes.func,
 };
 

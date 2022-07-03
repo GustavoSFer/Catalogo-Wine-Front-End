@@ -35,3 +35,15 @@ describe('Verificando o botão de busca', () => {
     expect(pesquisar).toBeInTheDocument();
   });
 });
+
+describe('Clicando no botão para adicionar no carrinho', () => {
+  it('Esperado que seja adicionado no carrinho e localStorage', async () => {
+    render(
+      <ProvideCatalogo>
+        <App />
+      </ProvideCatalogo>,
+    );
+    // const btnCat = await screen.findByTestId('btn-addCar');
+    // expect(btnCat).toBeInTheDocument();
+  });
+});
