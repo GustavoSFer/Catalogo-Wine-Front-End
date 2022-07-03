@@ -4,7 +4,7 @@ import Catalogo from './Catalogo';
 
 function Index() {
   return (
-    <div>
+    <div className="m-4">
       <Nav />
       <Catalogo />
     </div>

@@ -21,7 +21,7 @@ function ProvideCatalogo({ children }) {
     if (type !== '') {
       const product = await fetchApi();
       const filtro = [...product].filter((preco) => (
-        preco.price >= separandoPreco[0] && preco.price <= separandoPreco[1]
+        preco.priceMember > separandoPreco[0] && preco.priceMember <= separandoPreco[1]
       ));
       setProducts(filtro);
     }

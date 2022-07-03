@@ -32,7 +32,7 @@ function Catalogo() {
 
   return (
     <main>
-      <div>
+      <div className="row row-cols-4 center p-2 mt-5">
         <FiltragemPreco />
         {
           products.length !== 0 ? products.map((item) => (
@@ -45,7 +45,7 @@ function Catalogo() {
             : <h1>Não existe produtos</h1>
         }
       </div>
-      <div>
+      <div className="d-flex justify-content-evenly">
         <ButtonOnClick disabled={page <= 1} onClick={handleCliciPreviousPage}>
           Pagina Anterior
         </ButtonOnClick>

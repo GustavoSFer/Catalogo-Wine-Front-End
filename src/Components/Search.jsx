@@ -22,13 +22,13 @@ function Search() {
 
   return (
     <div>
-      <button type="button" onClick={handleClick}>
+      <button className="m-3 btn btn-outline-success" type="button" onClick={handleClick}>
         Busca por nome
       </button>
       { buscar ? (
         <div>
-          <input type="text" value={txtBusca} onChange={handleChange} />
-          <button type="button" onClick={pesquisar}>Pesquisar</button>
+          <input className="form-control me-2" type="text" value={txtBusca} onChange={handleChange} />
+          <button type="button" className="btn btn-outline-success mt-2" onClick={pesquisar}>Pesquisar</button>
         </div>
       ) : ''}
     </div>
