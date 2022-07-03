@@ -10,7 +10,7 @@ function FilterByPrice() {
 
   return (
     <fieldset className="filterText tamanho m-3" onChange={(e) => handleChange(e)}>
-      <legend>Opção de filtro por preço:</legend>
+      <legend className="fw-semibold fs-6">Opção de filtro por preço:</legend>
 
       <div className="form-check">
         <label htmlFor="filter">

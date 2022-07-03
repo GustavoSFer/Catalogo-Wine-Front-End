@@ -45,7 +45,7 @@ function Catalogo() {
             : <h1>Não existe produtos</h1>
         }
       </div>
-      <div>
+      <div className="d-flex justify-content-evenly">
         <ButtonOnClick disabled={page <= 1} onClick={handleCliciPreviousPage}>
           Pagina Anterior
         </ButtonOnClick>
