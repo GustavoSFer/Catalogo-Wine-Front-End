@@ -1,10 +1,21 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ContextWine from '../Context/ContextWine';
+import { fetchApi } from '../Services/requatsApi';
 
 function Search() {
   const [buscar, setBuscar] = useState(false);
   const [txtBusca, setTextBusca] = useState('');
-  const { filterByName } = useContext(ContextWine);
+  const { setProducts } = useContext(ContextWine);
+
+  const filterByName = async (name) => {
+    const product = await fetchApi();
+    if (name) {
+      const filtro = [...product].filter((item) => (
+        item.name.toLowerCase().includes(name)
+      ));
+      setProducts(filtro);
+    }
+  };
 
   const handleClick = () => {
     setBuscar(true);
@@ -18,11 +29,17 @@ function Search() {
     filterByName(txtBusca.toLowerCase());
     setBuscar(false);
     setTextBusca('');
+    filterByName();
   };
 
   return (
     <div>
-      <button className="m-3 btn btn-outline-success" type="button" onClick={handleClick}>
+      <button
+        className="m-3 btn btn-outline-success"
+        type="button"
+        onClick={handleClick}
+        data-testid="btn-busca-por-nome"
+      >
         Busca por nome
       </button>
       { buscar ? (

@@ -26,7 +26,7 @@
   * Chave SSH
     * `git clone git@github.com:GustavoSFer/Catalogo-Wine-Front-End.git`
   * HTTPS
-   * `git clone https://github.com/GustavoSFer/Catalogo-Wine-Front-End.git`
+    * `git clone https://github.com/GustavoSFer/Catalogo-Wine-Front-End.git`
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd Catalogo-Wine-Front-End`
 

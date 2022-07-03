@@ -21,6 +21,7 @@ function Cart() {
           <div key={pedido.id}>
             <CardPedidos item={pedido} />
             <ButtonOnClick
+              disabled={false}
               onClick={() => removerItem(pedido.id)}
             >
               Remover do carrinho

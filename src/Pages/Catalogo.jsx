@@ -50,7 +50,7 @@ function Catalogo() {
           Pagina Anterior
         </ButtonOnClick>
 
-        <ButtonOnClick onClick={handleCliciNextPage}>
+        <ButtonOnClick disabled={false} onClick={handleCliciNextPage}>
           Póxima Pagina
         </ButtonOnClick>
       </div>
