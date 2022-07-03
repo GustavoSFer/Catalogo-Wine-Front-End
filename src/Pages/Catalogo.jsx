@@ -39,6 +39,7 @@ function Catalogo() {
             <CardProduct
               key={item.id}
               item={item}
+              id="card-product"
               addProductToCart={addProductToCart}
             />
           ))

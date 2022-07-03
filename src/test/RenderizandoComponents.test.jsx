@@ -70,3 +70,15 @@ describe('Verificando Filtro por valor', () => {
     expect(ateQuarenta).toBeInTheDocument();
   });
 });
+
+describe('Verificando os Cards do produtos', () => {
+  it('Verificando se os Cards são renderizados', () => {
+    render(
+      <ProvideCatalogo>
+        <App />
+      </ProvideCatalogo>,
+    );
+    const cards = screen.queryAllByRole('img');
+    expect(cards).toHaveLength(1);
+  });
+});
