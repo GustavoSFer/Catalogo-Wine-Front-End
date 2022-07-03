@@ -32,7 +32,7 @@ function Catalogo() {
 
   return (
     <main>
-      <div className="row row-cols-4 center p-2">
+      <div className="row row-cols-4 center p-2 mt-5">
         <FiltragemPreco />
         {
           products.length !== 0 ? products.map((item) => (
