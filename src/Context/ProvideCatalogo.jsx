@@ -34,7 +34,7 @@ function ProvideCatalogo({ children }) {
   useEffect(() => {
     filtragemPreco(filtroPreco);
     // fetchDb(page);
-  }, [filtroPreco, page]);
+  }, [filtroPreco]);
 
   const context = React.useMemo(() => ({
     products,
