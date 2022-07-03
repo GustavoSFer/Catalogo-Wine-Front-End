@@ -44,7 +44,7 @@ function Search() {
       </button>
       { buscar ? (
         <div>
-          <input className="form-control me-2" type="text" value={txtBusca} onChange={handleChange} />
+          <input type="text" value={txtBusca} onChange={handleChange} data-testid="input-busca" className="form-control me-2" />
           <button type="button" className="btn btn-outline-success mt-2" onClick={pesquisar}>Pesquisar</button>
         </div>
       ) : ''}
