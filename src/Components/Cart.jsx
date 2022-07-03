@@ -15,17 +15,19 @@ function Cart() {
   useEffect(() => {}, [removeProduct]);
 
   return (
-    <div>
+    <div className="d-flex justify-content-around">
       <div>
         { carLocalStorage ? carLocalStorage.map((pedido) => (
           <div key={pedido.id}>
             <CardPedidos item={pedido} />
-            <ButtonOnClick
-              disabled={false}
-              onClick={() => removerItem(pedido.id)}
-            >
-              Remover do carrinho
-            </ButtonOnClick>
+            <div className="ms-3">
+              <ButtonOnClick
+                disabled={false}
+                onClick={() => removerItem(pedido.id)}
+              >
+                Remover do carrinho
+              </ButtonOnClick>
+            </div>
           </div>
         )) : <h1>Sem Pedidos</h1>}
       </div>
