@@ -8,7 +8,7 @@ function CardProduct({ item, addProductToCart }) {
   return (
     <div className="col rounded-3 border border-success m-3 tamanho shadow bg-body rounded">
       <Link className="text-decoration-none" to={`detalhes/${item.id}`}>
-        <img className="img-fluid image" src={item.image} alt={item.name} />
+        <img src={item.image} alt={item.name} data-testid="img-card" className="img-fluid image" />
         <h3 className="fw-semibold fs-6">{item.name}</h3>
         <div>
           <p className="fst-italic m-0 text-decoration-line-through">
@@ -34,6 +34,7 @@ function CardProduct({ item, addProductToCart }) {
         <ButtonOnClick
           disabled={false}
           onClick={() => addProductToCart(item)}
+          data-testid="btn-addCar"
         >
           ADICIONAR
         </ButtonOnClick>
@@ -44,7 +45,7 @@ function CardProduct({ item, addProductToCart }) {
 
 CardProduct.defaultProps = { addProductToCart: () => {} };
 CardProduct.propTypes = {
-  item: PropTypes.objectOf.isRequired,
+  item: PropTypes.objectOf(PropTypes.objectOf).isRequired,
   addProductToCart: PropTypes.func,
 };
 

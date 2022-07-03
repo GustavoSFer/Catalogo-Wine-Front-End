@@ -3,10 +3,16 @@ import CardProduct from '../Components/CardProduct';
 import FiltragemPreco from '../Components/FiltragemPreco';
 import ContextWine from '../Context/ContextWine';
 import ButtonOnClick from '../Components/ButtonOnClick';
+import fetchApiWine from '../Services/requatsApi';
 
 function Catalogo() {
   const [cart, setCart] = useState([]);
-  const { products, page, setPage } = useContext(ContextWine);
+  const {
+    products,
+    page,
+    setPage,
+    setProducts,
+  } = useContext(ContextWine);
 
   const addProductToCart = (product) => {
     // setCart(JSON.parse(localStorage.getItem('cart')));
@@ -17,18 +23,25 @@ function Catalogo() {
     localStorage.setItem('cart', JSON.stringify([...newCart, product]));
   };
 
-  const handleCliciPreviousPage = () => {
+  const handleCliciPreviousPage = async () => {
     setPage(Number(page) - 1);
+    const data = await fetchApiWine(page);
+    setProducts(data.items);
   };
 
-  const handleCliciNextPage = () => {
+  const handleCliciNextPage = async () => {
     setPage(Number(page) + 1);
+    const data = await fetchApiWine(page);
+    setProducts(data.items);
   };
 
   useEffect(() => {
     const storage = JSON.parse(localStorage.getItem('cart')) || [];
     setCart(storage);
   }, []);
+
+  useEffect(() => {
+  }, [page]);
 
   return (
     <main>
@@ -39,6 +52,7 @@ function Catalogo() {
             <CardProduct
               key={item.id}
               item={item}
+              id="card-product"
               addProductToCart={addProductToCart}
             />
           ))
@@ -50,7 +64,7 @@ function Catalogo() {
           Pagina Anterior
         </ButtonOnClick>
 
-        <ButtonOnClick onClick={handleCliciNextPage}>
+        <ButtonOnClick disabled={false} onClick={handleCliciNextPage}>
           Póxima Pagina
         </ButtonOnClick>
       </div>

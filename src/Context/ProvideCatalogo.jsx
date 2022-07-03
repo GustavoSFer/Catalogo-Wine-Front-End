@@ -27,16 +27,6 @@ function ProvideCatalogo({ children }) {
     }
   };
 
-  const filterByName = async (name) => {
-    const product = await fetchApi();
-    if (name) {
-      const filtro = [...product].filter((item) => (
-        item.name.toLowerCase().includes(name)
-      ));
-      setProducts(filtro);
-    }
-  };
-
   useEffect(() => {
     fetchDb(1);
   }, []);
@@ -44,7 +34,7 @@ function ProvideCatalogo({ children }) {
   useEffect(() => {
     filtragemPreco(filtroPreco);
     // fetchDb(page);
-  }, [filtroPreco, page]);
+  }, [filtroPreco]);
 
   const context = React.useMemo(() => ({
     products,
@@ -52,7 +42,7 @@ function ProvideCatalogo({ children }) {
     setPage,
     filtroPreco,
     setFiltroPreco,
-    filterByName,
+    setProducts,
   }), [products]);
 
   return (

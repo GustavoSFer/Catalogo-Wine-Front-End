@@ -14,7 +14,7 @@ function Nav() {
         </div>
         <div className="m-3">
           <Link className="m-3 text-decoration-none" to="/clube">Clube</Link>
-          <Link className="m-3 text-decoration-none" to="/loja">Loja</Link>
+          <Link className="m-3 text-decoration-none" to="/">Loja</Link>
           <Link className="m-3 text-decoration-none" to="/produtores">Produtores</Link>
           <Link className="m-3 text-decoration-none" to="/ofertas">Ofertas</Link>
           <Link className="m-3 text-decoration-none" to="/eventos">Eventos</Link>
